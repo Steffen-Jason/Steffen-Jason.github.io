@@ -1,0 +1,32 @@
+body {
+	background-color: lightblue;
+}
+
+h1 {
+	color: black;
+	text-align: center;
+	font-family: Georgia;
+	padding: 10px;
+}
+
+h2  {
+	color: black;
+	text-align: center;
+	font-family: Sans-serif;
+	padding: 10px;
+}
+
+ul  {
+	font-size: 20px;
+}
+
+li  {
+	margin: 10px;
+}
+
+.ready {
+	font-color: red
+	font-variant: small-caps
+	font-weight: bold
+}
+
