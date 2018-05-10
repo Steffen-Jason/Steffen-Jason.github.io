@@ -2,11 +2,64 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="C:\Users\Jason\Documents\GitHub\Steffen-Jason.github.io\mystyle.css">
+<script>
+function myFunction() {
+var movies = [];
+var counter = movies.length;
+var i;
+var text;
+var list;
+text = document.getElementById("movieName").value;
+
+
+if  (text == "Casablanca"
+	|| text == "The Princess Bride"
+	|| text == "The Maltese Falcon"
+	|| text == "Gone With The Wind"
+	|| text == "Gone With the Wind") {
+	document.getElementById("Bogart").innerHTML = "Well done, you have an excellent taste in movies!";
+	} else {
+	document.getElementById("Bogart").innerHTML = "Surely you have seen better movies than that!";
+	}
+
+listOfMovies = document.getElementById("movieList").innerHTML;	
+	
+if (listOfMovies == "<br>") {
+	document.getElementById("movieList").innerHTML = text;
+	} else {
+	movies = listOfMovies.split(", ");
+	movies.push(text);
+	document.getElementById("movieList").innerHTML = movies[0];
+	}
+	
+	for (i = 1; i < movies.length; i++) {
+	document.getElementById("movieList").innerHTML += ", ";
+	document.getElementById("movieList").innerHTML += movies[i];
+	}
+}
+</script>
 </head>
 <body>
 
 <h1> This is my first Challenge </h1>
 <h2> JavaScript - Loops, Conditional Statements, Functions, Variables, Parameters, Arrays, Associative Arrays </h2>
+<br>
+<br>
+<br>
+<div><p>Please enter in your favorite movie. Please be sure to capitalize when applicable.</p>
+<br>
+<form>
+  <label for="fname">Name of movie:</label>
+  <input type="text" id="movieName" name="movieNames">
+</form>
+<button type="button" onclick="myFunction()">Enter</button>
+<br>
+<br>
+<br>
+<p id="Bogart">Watch closely as this text changes</p>
+<br>
+<p>List of movies you have entered:</p>
+<p id="movieList"><br></p>
 
 </body>
 <html>
