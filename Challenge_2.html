@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="\mystyle.css">
+<script>
+function myFunction() {
+
+//If there is no input then the blurb stays the same
+var noun1 = "nightclub";
+var noun2 = "flame";
+var firstName1 = "Rick";
+var lastName1 = "Blaine";
+var firstName2 = "Victor";
+var lastName2 = "Laszlo";
+var location = "Czechoslovakia"
+
+if (document.getElementById("noun1").value != "") {
+	var noun1 = document.getElementById("noun1").value;
+	}
+
+if (document.getElementById("noun2").value != "") {
+	var noun2 = document.getElementById("noun2").value;
+	}
+	
+if (document.getElementById("firstName1").value != "") {
+	var firstName1 = document.getElementById("firstName1").value;
+	}	
+
+if (document.getElementById("lastName1").value != "") {
+	var lastName1 = document.getElementById("lastName1").value;
+	}
+
+if (document.getElementById("firstName2").value != "") {
+	var firstName2 = document.getElementById("firstName2").value;
+	}	
+
+if (document.getElementById("lastName2").value != "") {
+	var lastName2 = document.getElementById("lastName2").value;
+	}	
+
+if (document.getElementById("location").value != "") {
+	var location = document.getElementById("location").value;
+	}	
+
+//Create a new object containing all of the inputs
+var myInputs = new Inputs(noun1, noun2, firstName1, lastName1, firstName2, lastName2, location);
+
+myInputs.firstFullName = function() {
+    return this.firstName1 + " " + this.lastName1;
+};
+
+myInputs.secondFullName = function() {
+    return this.firstName2 + " " + this.lastName2;
+};
+
+	
+	var myMadLib = myInputs.firstFullName() + ", who owns a " + myInputs.noun1 + " in Casablanca, Morocco, discovers" 
+	+ " his old " + myInputs.noun2 + " Ilsa is in town with her husband, "+ myInputs.secondFullName() +". " + myInputs.lastName2 + " is<br>" 
+	+ "a resistance leader from " + myInputs.location + ", and with Germans on his tail, Ilsa " 
+	+ "knows " + myInputs.firstName1 + " can help them get out of the country - but will he?<br><br>Original blurb found on IMDB.com";
+
+document.getElementById("story").innerHTML = myMadLib;
+
+//This Code moves the viewport to the bottom of the page in case it was hard to see something happened
+//Like with my computer.
+window.scrollTo(0,document.body.scrollHeight);
+
+}
+
+function Inputs(noun1, noun2, firstName1, lastName1, firstName2, lastName2, location) {
+	this.noun1 = noun1;
+	this.noun2 = noun2;
+    this.firstName1 = firstName1;
+    this.lastName1 = lastName1;
+    this.firstName2 = firstName2;
+    this.lastName2 = lastName2;
+	this.location = location;
+}
+
+</script>
+</head>
+<body>
+
+<h1> This is my second Challenge </h1>
+<h2> JavaScript Objects - Object Creation Functions, Inheritance, Properties, Methods, Instantiation </h2>
+<br>
+<h2>Come play a game!</h2>
+<br>
+<p>Please enter in the following words:</p>
+<form>
+  <label for="noun1">a Noun:<br></label>
+  <input type="text" id="noun1" name="noun1">
+</form>
+<form>
+  <label for="noun2">another noun:<br></label>
+  <input type="text" id="noun2" name="noun2">
+</form>
+<form>
+  <label for="firstName1">A man's first name:<br></label>
+  <input type="text" id="firstName1" name="firstName1">
+</form>
+<form>
+  <label for="lastName1">A man's last name:<br></label>
+  <input type="text" id="lastName1" name="lastName1">
+</form>
+<form>
+  <label for="firstName2">Another man's first name:<br></label>
+  <input type="text" id="firstName2" name="firstName2">
+</form>
+<form>
+  <label for="lastName2">Another man's last name:<br></label>
+  <input type="text" id="lastName2" name="lastName2">
+</form>
+<form>
+  <label for="location">a place:<br></label>
+  <input type="text" id="location" name="location">
+</form>
+<button type="button" onclick="myFunction()">Go!</button>
+<br>
+<br>
+<br>
+<br>
+<p id="story"></p>
+
+
+</body>
+<html>
