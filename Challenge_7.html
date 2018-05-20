@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="C:\Users\Jason\Documents\GitHub\Steffen-Jason.github.io\mystyle.css">
+<script>
+function myBlackFunction() {document.getElementById("originalLine").style.color = "black";}
+function myRedFunction() {document.getElementById("originalLine").style.color = "red";}
+function myYellowFunction() {document.getElementById("originalLine").style.color = "yellow";}
+function myBlueFunction() {document.getElementById("originalLine").style.color = "blue";}
+function myWhiteFunction() {document.getElementById("originalLine").style.color = "white";}
+function myCourierFunction() {document.getElementById("originalLine").style.fontFamily = "Courier";}
+function myTimesFunction() {document.getElementById("originalLine").style.fontFamily = "Times New Roman";}
+function myComicFunction() {document.getElementById("originalLine").style.fontFamily = "Comic Sans MS";}
+function myCalibriFunction() {document.getElementById("originalLine").style.fontFamily = "Calibri";}
+function myGeorgiaFunction() {document.getElementById("originalLine").style.fontFamily = "Georgia";}
+function mySmallFunction() {document.getElementById("originalLine").style.fontSize = "small";}
+function myMediumFunction() {document.getElementById("originalLine").style.fontSize = "medium";}
+function myLargeFunction() {document.getElementById("originalLine").style.fontSize = "large";}
+function myXLFunction() {document.getElementById("originalLine").style.fontSize = "x-large";}
+function myXLLFunction() {document.getElementById("originalLine").style.fontSize = "xx-large";}
+</script>
+</head>
+<body>
+
+<h1> This is my seventh Challenge </h1>
+<h2> DOM Manipulation Using createElement, appendChild, insertBefore, removeChild, etc. </h2>
+<br>
+<br>
+<br>
+<div id = "textBlock">
+<h3 id="originalLine" style="text-align:center">Please enter in your favorite movie. Please be sure to capitalize when applicable.</h3>
+</div>
+<br>
+<br>
+<br>
+<div class="dropdown" style="margin-left:500px">
+  <button class="dropbtn">Colors</button>
+  <div class="dropdown-content">
+	<a href="#" onclick="myBlackFunction()">Black</a>
+    <a href="#" onclick="myRedFunction()">Red</a>
+    <a href="#" onclick="myYellowFunction()">Yellow</a>
+    <a href="#" onclick="myBlueFunction()">Blue</a>
+	<a href="#" onclick="myWhiteFunction()">White</a>
+  </div>
+</div>
+<div class="dropdown" style="margin-left:50px">
+  <button class="dropbtn">Font Family</button>
+  <div class="dropdown-content">
+	<a href="#" onclick="myCourierFunction()">Courier</a>
+    <a href="#" onclick="myTimesFunction()">Times New Roman</a>
+    <a href="#" onclick="myComicFunction()">Comic Sans</a>
+    <a href="#" onclick="myCalibriFunction()">Calibri</a>
+	<a href="#" onclick="myGeorgiaFunction()">Georgia</a>
+  </div>
+</div>
+<div class="dropdown" style="margin-left:50px">
+  <button class="dropbtn">Font Size</button>
+  <div class="dropdown-content">
+	<a href="#" onclick="mySmallFunction()">Small</a>
+    <a href="#" onclick="myMediumFunction()">Medium</a>
+    <a href="#" onclick="myLargeFunction()">Large</a>
+    <a href="#" onclick="myXLFunction()">Extra Large</a>
+	<a href="#" onclick="myXLLFunction()">Enormous</a>
+  </div>
+</div>
+
+</body>
+<html>
