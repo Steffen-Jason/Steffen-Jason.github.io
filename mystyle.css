@@ -50,6 +50,7 @@ input[type=text] {
     box-sizing: border-box;
 }
 
+//Dropdown menu shamelessy stolen from W3schools.com
 .dropbtn {
     background-color: #4CAF50;
     color: white;
