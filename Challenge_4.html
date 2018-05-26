@@ -17,7 +17,7 @@ function findCapital() {
 var getArticleInfo = new XMLHttpRequest();
 
 getArticleInfo.onreadystatechange = loadText;
-getArticleInfo.open("GET", "country-capitals.json");
+getArticleInfo.open("GET", "country-capitals.txt");
 getArticleInfo.send();
 
 function loadText() {
