@@ -26,9 +26,10 @@ getArticleInfo.onreadystatechange = function loadText() {
   }
 };
 
+
 country = document.getElementById("countryName").value;
 
-document.getElementById("message").innerHTML = "Please check your spelling and try again.";
+document.getElementById("message").innerHTML = "Please check your spelling.";
 document.getElementById("capital").innerHTML = "<br>";
 document.getElementById("latitude").innerHTML = "<br>";
 document.getElementById("longitude").innerHTML = "<br>";
@@ -44,6 +45,7 @@ for (i = 0; i < countryJson.length; i++) {
 		document.getElementById("longitude").innerHTML = "The longitude of the capital is: <b>" + countryJson[i].CapitalLongitude + "</b>";
 		document.getElementById("continent").innerHTML = "The country is on the continent: <b>" + countryJson[i].ContinentName + "</b>";
 		} 
+		
 	if (country == "Morocco") {
 		document.getElementById("countryCode").innerHTML = "Famous cities: <b>Casablanca.  Known for its waters</b>";
 	}
@@ -53,7 +55,7 @@ for (i = 0; i < countryJson.length; i++) {
 }
 </script>
 </head>
-<body>
+<body onload="findCapital()">
 
 <h1> This is my fourth Challenge </h1>
 <h2> AJAX requesting a JSON file </h2>
