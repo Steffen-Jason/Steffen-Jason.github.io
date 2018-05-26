@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="C:\Users\Jason\Documents\Github\Steffen-Jason.github.io\mystyle.css">
+<script>
+function addTop() {
+
+//if (newNumberTwo 
+/*var movie = document.getElementById("movieName").value;
+var newText = document.createTextNode(movie);
+var topMovie = document.getElementById("topMovies").childNodes[0];
+topMovie.replaceChild(newText, topMovie.childNodes[0]);*/
+
+    var textnode = document.createTextNode("Water");
+    var item = document.getElementById("topMovies").childNodes[0];
+    item.replaceChild(textnode, item.childNodes[0]);
+	
+}
+
+function addNext() {
+
+var movie = document.getElementById("movieName").value;
+var lineItem = document.createElement("LI");
+var newText = document.createTextNode(movie);
+lineItem.appendChild(newText);
+document.getElementById("topMovies").appendChild(lineItem);
+
+}
+</script>
+</head>
+<body>
+
+<h1> This is my sixth Challenge </h1>
+<h2> DOM Manipulation Using createElement, appendChild, insertBefore, removeChild, etc. </h2>
+<br>
+<br>
+<br>
+<div><p>Please enter in one of your favorite movies</p>
+<br>
+<form>
+  <label for="fname">Name of movie:</label>
+  <input type="text" id="movieName" name="movieNames">
+</form>
+<button type="button" onclick="addTop()">Add to top</button>
+<button type="button" onclick="addNext()">Add to next number</button>
+<h1>My favorite movies of all time (in-order)</h1>
+<ol id=topMovies>
+	<li>Casablanca</li>
+</ol>
+
+</body>
+<html>
