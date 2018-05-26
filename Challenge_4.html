@@ -16,16 +16,13 @@ function findCapital() {
 
 var getArticleInfo = new XMLHttpRequest();
 
-getArticleInfo.onreadystatechange = loadText;
 getArticleInfo.open("GET", "country-capitals.json");
 getArticleInfo.send();
 
-function loadText() {
-  //var countryJson = document.getElementById("message");
+getArticleInfo.onreadystatechange = function loadText() {
   if (getArticleInfo.readyState === 4) {
     if (getArticleInfo.status === 200) {
 	  countryJson = JSON.parse(getPlayerInfo.responseText),
-      //countryJson.innerHTML = getArticleInfo.responseText;
     } else {
       console.log('There was a problem with the request.');
     }
