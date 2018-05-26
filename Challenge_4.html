@@ -23,9 +23,7 @@ getArticleInfo.onreadystatechange = function loadText() {
   if (getArticleInfo.readyState === 4) {
     if (getArticleInfo.status === 200) {
 	  countryJson = JSON.parse(getPlayerInfo.responseText),
-    } else {
-      console.log('There was a problem with the request.');
-    }
+    } 
   }
 };
 
