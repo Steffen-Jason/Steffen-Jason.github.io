@@ -22,7 +22,7 @@ getArticleInfo.send();
 getArticleInfo.onreadystatechange = function loadText() {
   if (getArticleInfo.readyState === 4) {
     if (getArticleInfo.status === 200) {
-	  countryJson = JSON.parse(getPlayerInfo.responseText),
+	  countryJson = JSON.parse(getArticleInfo.responseText)
     } 
   }
 };
