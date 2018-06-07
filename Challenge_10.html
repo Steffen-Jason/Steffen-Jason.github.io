@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="\mystyle.css">
+<script>
+function myBlackFunction() {
+	var canvas = document.getElementById("myCanvas");
+	var ctx = canvas.getContext("2d");
+	ctx.fillStyle = "#000000";
+	ctx.fillRect(0,0,400,300);
+	}
+function myRedFunction() {
+	var canvas = document.getElementById("myCanvas");
+	var ctx = canvas.getContext("2d");
+	ctx.fillStyle = "#FF0000";
+	ctx.fillRect(0,0,400,300);
+	}
+function myYellowFunction() {
+	var canvas = document.getElementById("myCanvas");
+	var ctx = canvas.getContext("2d");
+	ctx.fillStyle = "#FFFF00";
+	ctx.fillRect(0,0,400,300);
+	}
+function myBlueFunction() {
+	var canvas = document.getElementById("myCanvas");
+	var ctx = canvas.getContext("2d");
+	ctx.fillStyle = "#0000FF";
+	ctx.fillRect(0,0,400,300);
+	}
+function myWhiteFunction() {
+	var canvas = document.getElementById("myCanvas");
+	var ctx = canvas.getContext("2d");
+	ctx.fillStyle = "#FFFFFF";
+	ctx.fillRect(0,0,400,300);
+	}
+	
+function myBlackBorderFunction() {
+	document.getElementById("myCanvas").style.border = "5px solid #000000";
+	}
+function myRedBorderFunction() {
+	document.getElementById("myCanvas").style.border = "5px solid #FF0000";
+	}
+function myYellowBorderFunction() {
+	document.getElementById("myCanvas").style.border = "5px solid #FFFF00";
+	}
+function myBlueBorderFunction() {
+	document.getElementById("myCanvas").style.border = "5px solid #0000FF";
+	}
+function myWhiteBorderFunction() {
+	document.getElementById("myCanvas").style.border = "5px solid #FFFFFF";
+	}
+function myBlackHLineFunction() {
+	var canvas = document.getElementById("myCanvas");
+	var ctx = canvas.getContext("2d");
+	var height = Math.floor((Math.random() * 300) + 1);
+	var thickness = Math.floor((Math.random() * 50) + 1);
+	ctx.fillStyle = "#000000";
+	ctx.fillRect(0,height,400,thickness);
+	}
+function myRedHLineFunction() {
+	var canvas = document.getElementById("myCanvas");
+	var ctx = canvas.getContext("2d");
+	var height = Math.floor((Math.random() * 300) + 1);
+	var thickness = Math.floor((Math.random() * 50) + 1);
+	ctx.fillStyle = "#FF0000";
+	ctx.fillRect(0,height,400,thickness);
+	}
+function myYellowHLineFunction() {
+	var canvas = document.getElementById("myCanvas");
+	var ctx = canvas.getContext("2d");
+	var height = Math.floor((Math.random() * 300) + 1);
+	var thickness = Math.floor((Math.random() * 50) + 1);
+	ctx.fillStyle = "#FFFF00";
+	ctx.fillRect(0,height,400,thickness);
+	}
+function myBlueHLineFunction() {
+	var canvas = document.getElementById("myCanvas");
+	var ctx = canvas.getContext("2d");
+	var height = Math.floor((Math.random() * 300) + 1);
+	var thickness = Math.floor((Math.random() * 50) + 1);
+	ctx.fillStyle = "#0000FF";
+	ctx.fillRect(0,height,400,thickness);
+	}
+function myWhiteHLineFunction() {
+	var canvas = document.getElementById("myCanvas");
+	var ctx = canvas.getContext("2d");
+	var height = Math.floor((Math.random() * 300) + 1);
+	var thickness = Math.floor((Math.random() * 50) + 1);
+	ctx.fillStyle = "#FFFFFF";
+	ctx.fillRect(0,height,400,thickness);
+	}
+function myRandomHLineFunction() {
+	var canvas = document.getElementById("myCanvas");
+	var ctx = canvas.getContext("2d");
+	var height = Math.floor((Math.random() * 300) + 1);
+	var thickness = Math.floor((Math.random() * 50) + 1);
+	
+	//Random formula for colors found at: https://stackoverflow.com/questions/1484506/random-color-generator?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+	var letters = '0123456789ABCDEF';
+	var color = '#';
+	for (var i = 0; i < 6; i++) {
+		color += letters[Math.floor(Math.random() * 16)];
+		}
+	
+	ctx.fillStyle = color;
+	ctx.fillRect(0,height,400,thickness);
+	}
+function myBlackVLineFunction() {
+	var canvas = document.getElementById("myCanvas");
+	var ctx = canvas.getContext("2d");
+	var length = Math.floor((Math.random() * 400) + 1);
+	var thickness = Math.floor((Math.random() * 50) + 1);
+	ctx.fillStyle = "#000000";
+	ctx.fillRect(length,0,thickness,300);
+	}
+function myRedVLineFunction() {
+	var canvas = document.getElementById("myCanvas");
+	var ctx = canvas.getContext("2d");
+	var length = Math.floor((Math.random() * 400) + 1);
+	var thickness = Math.floor((Math.random() * 50) + 1);
+	ctx.fillStyle = "#FF0000";
+	ctx.fillRect(length,0,thickness,300);
+	}
+function myYellowVLineFunction() {
+	var canvas = document.getElementById("myCanvas");
+	var ctx = canvas.getContext("2d");
+	var length = Math.floor((Math.random() * 400) + 1);
+	var thickness = Math.floor((Math.random() * 50) + 1);
+	ctx.fillStyle = "#FFFF00";
+	ctx.fillRect(length,0,thickness,300);
+	}
+function myBlueVLineFunction() {
+	var canvas = document.getElementById("myCanvas");
+	var ctx = canvas.getContext("2d");
+	var length = Math.floor((Math.random() * 400) + 1);
+	var thickness = Math.floor((Math.random() * 50) + 1);
+	ctx.fillStyle = "#0000FF";
+	ctx.fillRect(length,0,thickness,300);
+	}
+function myWhiteVLineFunction() {
+	var canvas = document.getElementById("myCanvas");
+	var ctx = canvas.getContext("2d");
+	var length = Math.floor((Math.random() * 400) + 1);
+	var thickness = Math.floor((Math.random() * 50) + 1);
+	ctx.fillStyle = "#FFFFFF";
+	ctx.fillRect(length,0,thickness,300);
+	}
+function myRandomVLineFunction() {
+	var canvas = document.getElementById("myCanvas");
+	var ctx = canvas.getContext("2d");
+	var length = Math.floor((Math.random() * 400) + 1);
+	var thickness = Math.floor((Math.random() * 50) + 1);
+	
+	//Random formula for colors found at: https://stackoverflow.com/questions/1484506/random-color-generator?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+	var letters = '0123456789ABCDEF';
+	var color = '#';
+	for (var i = 0; i < 6; i++) {
+		color += letters[Math.floor(Math.random() * 16)];
+		}
+	
+	ctx.fillStyle = color;
+	ctx.fillRect(length,0,thickness,300);
+	}
+</script>
+</head>
+<body>
+<h3 id="originalLine" style="text-align:center">Sit back, relax, and draw</h3>
+
+<!--audio found at: https://commons.wikimedia.org/wiki/File:Clair_de_lune_(Claude_Debussy)_Suite_bergamasque.ogg -->
+<audio style="margin-left:600px" controls>
+  <source src="C:\Users\Jason\Documents\GitHub\Steffen-Jason.github.io\Clair_de_lune.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+<iframe width="400" height="200" style="margin-left:550px" src="https://www.youtube.com/embed/SHtq1nRvYK4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<div class="dropdown" style="margin-left:450px">
+  <button class="dropbtn">Background</button>
+  <div class="dropdown-content">
+	<a href="#" onclick="myBlackFunction()">Black</a>
+    <a href="#" onclick="myRedFunction()">Red</a>
+    <a href="#" onclick="myYellowFunction()">Yellow</a>
+    <a href="#" onclick="myBlueFunction()">Blue</a>
+	<a href="#" onclick="myWhiteFunction()">White</a>
+  </div>
+</div>
+<div class="dropdown" style="margin-left:50px">
+  <button class="dropbtn">Border</button>
+  <div class="dropdown-content">
+	<a href="#" onclick="myBlackBorderFunction()">Black</a>
+    <a href="#" onclick="myRedBorderFunction()">Red</a>
+    <a href="#" onclick="myYellowBorderFunction()">Yellow</a>
+    <a href="#" onclick="myBlueBorderFunction()">Blue</a>
+	<a href="#" onclick="myWhiteBorderFunction()">White</a>
+  </div>
+</div>
+<div class="dropdown" style="margin-left:50px">
+  <button class="dropbtn">Horizontal Line</button>
+  <div class="dropdown-content">
+	<a href="#" onclick="myBlackHLineFunction()">Black</a>
+    <a href="#" onclick="myRedHLineFunction()">Red</a>
+    <a href="#" onclick="myYellowHLineFunction()">Yellow</a>
+    <a href="#" onclick="myBlueHLineFunction()">Blue</a>
+	<a href="#" onclick="myWhiteHLineFunction()">White</a>
+	<a href="#" onclick="myRandomHLineFunction()">Random</a>
+  </div>
+</div>
+<div class="dropdown" style="margin-left:50px">
+  <button class="dropbtn">Vertical Line</button>
+  <div class="dropdown-content">
+	<a href="#" onclick="myBlackVLineFunction()">Black</a>
+    <a href="#" onclick="myRedVLineFunction()">Red</a>
+    <a href="#" onclick="myYellowVLineFunction()">Yellow</a>
+    <a href="#" onclick="myBlueVLineFunction()">Blue</a>
+	<a href="#" onclick="myWhiteVLineFunction()">White</a>
+	<a href="#" onclick="myRandomVLineFunction()">Random</a>
+  </div>
+</div>
+<br>
+<br>
+<canvas id="myCanvas" width="400" height="300"
+style="border:5px solid #000000; margin-left:550px">
+Your browser does not support the canvas element.
+</canvas>
+<script>
+var canvas = document.getElementById("myCanvas");
+	var ctx = canvas.getContext("2d");
+	ctx.fillStyle = "#FFFFFF";
+	ctx.fillRect(0,0,400,300);
+</script>
+
+<h1> This is my tenth Challenge </h1>
+<h2> HTML5 Tags - Video, Audio, and Canvas</h2>
+
+
+
+</body>
+<html>
