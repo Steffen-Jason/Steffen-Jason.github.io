@@ -1,51 +1,123 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="C:\Users\Jason\Documents\Github\Steffen-Jason.github.io\mystyle.css">
+<link rel="stylesheet" type="text/css" href="\mystyle.css">
 <script>
+
 function addTop() {
+var movie = document.getElementById("movieName").value;
+var list = document.getElementById("topMovies");
+var lineItem = document.createElement("li");
+var textnode = document.createTextNode(movie);
 
-//if (newNumberTwo 
-/*var movie = document.getElementById("movieName").value;
-var newText = document.createTextNode(movie);
-var topMovie = document.getElementById("topMovies").childNodes[0];
-topMovie.replaceChild(newText, topMovie.childNodes[0]);*/
+lineItem.appendChild(textnode);
+list.insertBefore(lineItem, list.childNodes[0]);	
 
-    var textnode = document.createTextNode("Water");
-    var item = document.getElementById("topMovies").childNodes[0];
-    item.replaceChild(textnode, item.childNodes[0]);
-	
+document.getElementById("movieName").value = "";
+
 }
 
 function addNext() {
-
 var movie = document.getElementById("movieName").value;
 var lineItem = document.createElement("LI");
 var newText = document.createTextNode(movie);
+
 lineItem.appendChild(newText);
 document.getElementById("topMovies").appendChild(lineItem);
+document.getElementById("movieName").value = "";
+}
+
+function removeTop() {
+var list = document.getElementById("topMovies");
+
+list.removeChild(list.childNodes[0]);
+document.getElementById("movieName").value = "";
+}
+
+function removeLast() {
+var i = 0;
+var listLength = 0;
+var list = document.getElementById("topMovies");
+
+listLength = list.getElementsByTagName("li").length
+list.removeChild(list.childNodes[(listLength + 1)]);
+document.getElementById("movieName").value = "";
+updateLocalStorage();
 
 }
+
+function removeMyNumber(listNumber) {
+var list = document.getElementById("topMovies");
+
+list.removeChild(list.childNodes[listNumber]);
+document.getElementById("movieName").value = "";
+}
+
+function addMyNumber(listNumber) {
+var list = document.getElementById("topMovies");
+var movie = document.getElementById("movieName").value;
+var lineItem = document.createElement("LI");
+var newText = document.createTextNode(movie);
+
+lineItem.appendChild(newText);
+list.insertBefore(lineItem, list.childNodes[(listNumber)]);
+document.getElementById("movieName").value = "";
+
+}
+
+
 </script>
 </head>
-<body>
 
 <h1> This is my sixth Challenge </h1>
 <h2> DOM Manipulation Using createElement, appendChild, insertBefore, removeChild, etc. </h2>
 <br>
 <br>
 <br>
-<div><p>Please enter in one of your favorite movies</p>
+<div><p>Please enter in a movie you would like to see</p>
 <br>
 <form>
   <label for="fname">Name of movie:</label>
   <input type="text" id="movieName" name="movieNames">
 </form>
 <button type="button" onclick="addTop()">Add to top</button>
-<button type="button" onclick="addNext()">Add to next number</button>
-<h1>My favorite movies of all time (in-order)</h1>
+<button type="button" onclick="addNext()">Add next number</button>
+<button type="button" onclick="removeTop()">Remove top number</button>
+<button type="button" onclick="removeLast()">Remove last number</button>
+<div class="dropdown">
+  <button class="dropbtn1">Remove a specific number</button>
+  <div class="dropdown-content">
+	<a href="#" onclick="removeMyNumber(1)">1</a>
+    <a href="#" onclick="removeMyNumber(2)">2</a>
+    <a href="#" onclick="removeMyNumber(3)">3</a>
+    <a href="#" onclick="removeMyNumber(4)">4</a>
+	<a href="#" onclick="removeMyNumber(5)">5</a>
+	<a href="#" onclick="removeMyNumber(6)">6</a>
+	<a href="#" onclick="removeMyNumber(7)">7</a>
+	<a href="#" onclick="removeMyNumber(8)">8</a>
+	<a href="#" onclick="removeMyNumber(9)">9</a>
+	<a href="#" onclick="removeMyNumber(10)">10</a>
+  </div>
+</div>
+<div class="dropdown">
+  <button class="dropbtn1">Add a specific number</button>
+  <div class="dropdown-content">
+	<a href="#" onclick="addMyNumber(1)">1</a>
+    <a href="#" onclick="addMyNumber(2)">2</a>
+    <a href="#" onclick="addMyNumber(3)">3</a>
+    <a href="#" onclick="addMyNumber(4)">4</a>
+	<a href="#" onclick="addMyNumber(5)">5</a>
+	<a href="#" onclick="addMyNumber(6)">6</a>
+	<a href="#" onclick="addMyNumber(7)">7</a>
+	<a href="#" onclick="addMyNumber(8)">8</a>
+	<a href="#" onclick="addMyNumber(9)">9</a>
+	<a href="#" onclick="addMyNumber(10)">10</a>
+  </div>
+</div>
+<h1 id="title">My personal movie queue</h1>
 <ol id=topMovies>
 	<li>Casablanca</li>
+	<li>What's Up Doc?</li>
 </ol>
 
 </body>
