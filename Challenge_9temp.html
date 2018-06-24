@@ -3,7 +3,7 @@
 <head>
 <link rel="stylesheet" type="text/css" href="\mystyle.css">
 <script>
-var guy = document.getElementById("monster");
+document.getElementById("monster").addEventListener("click", help);
 
 function tickle() {
 	document.getElementById("monster").style.animationName = "disappear";
@@ -14,8 +14,11 @@ function warning() {
 	document.getElementById("monster").style.animationName = "reappear";
 	document.getElementById("voice").innerHTML = "That's Better";
 }
+
+function help() {
+	document.getElementById.innerHTML = "OH NO! Hurry fix it!";
+}
 	
-//document.getElementById("monster").addEventListener("animationend", warning);
 </script>
 <style>
 #wrapper {
@@ -55,12 +58,10 @@ function warning() {
 <h3 id="voice" style="text-align:center">Tickle Me!</h3>
 <div id="wrapper"
 <!--Monster image found at: https://blog.spoongraphics.co.uk/tutorials/create-a-cute-furry-vector-monster-in-illustrator -->
-<div id="monster" onTouchMove="tickle()">
-<img src="\Monster.jpg" alt="Monster" width="500" height="333">
+<div id="monster" onTouchMove="tickle()" onTouchEnd="help()">
+<img id="monsterimg" src="\Monster.jpg" alt="Monster" width="500" height="333">
 </div>
 </div>
-<br>
-<br>
 <br>
 <button onclick="tickle()" style="margin-left:720px">Tickle</button>
 <button onclick="warning()" style="margin-left:720px">Fix</button>
