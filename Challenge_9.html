@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="\mystyle.css">
+<script>
+
+function tickle() {
+	document.getElementById("monster").style.animationName = "disappear";
+	document.getElementById("voice").innerHTML = "AHAHAHA!!";
+	}
+
+function warning() {
+	document.getElementById("monster").style.animationName = "reappear";
+	document.getElementById("voice").innerHTML = "That's Better";
+}
+
+function help() {
+	document.getElementById("voice").innerHTML = "OH NO! Hurry fix it!";
+	document.getElementById("return").innerHTML = "TAP HERE TO SOLIDIFY";
+}
+	
+</script>
+<style>
+#wrapper {
+	text-align: center
+}
+
+#monster {
+	display:inline-block;
+	line-height:100px;
+	animation-fill-mode: forwards;
+	animation-duration: 6s;
+	transition: all 6s;
+}
+
+
+@keyframes disappear {
+	from {opacity: 1;}
+	to {opacity: 0;}
+}
+
+@keyframes reappear {
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
+
+
+</style>
+<script>
+
+</script>
+</head>
+<body>
+<h1> This is my ninth Challenge </h1>
+<h2> Standard JavaScript Events Including those for Mobile Devices ( Ex. onTouchBegin, onLoad, etc.) and Animation and Transition Events</h2>
+<br>
+<h2>This webpage works better on mobile</h2>
+<h3 id="voice" style="text-align:center">Tickle Me!</h3>
+<div id="wrapper"
+<!--Monster image found at: https://blog.spoongraphics.co.uk/tutorials/create-a-cute-furry-vector-monster-in-illustrator -->
+<div id="monster" onTouchMove="tickle()" onTouchEnd="help()">
+<img id="monsterimg" src="\Monster.jpg" alt="Monster" width="500" height="333">
+</div>
+</div>
+<br>
+<h2 id="return" onTouchStart="warning()"></h2>
+<button onclick="tickle()" style="margin-left:720px">Tickle</button>
+<button onclick="warning()" style="margin-left:720px">Fix</button>
+
+
+
+</body>
+<html>
