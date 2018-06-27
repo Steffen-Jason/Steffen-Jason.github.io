@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="\mystyle.css">
+<script>
+
+function tickle() {
+	document.getElementById("monster").style.animationName = "disappear";
+	document.getElementById("voice").innerHTML = "AHAHAHA!!";
+}
+
+function warning() {
+	var tempName;
+	document.getElementById("monster").style.animationName = "reappear";
+	document.getElementById("voice").innerHTML = "That's Better";
+	if (localStorage.monsterName) {
+		tempName = localStorage.monsterName;
+	} else {
+		tempName = "the monster"
+	}
+	if(typeof(Storage) !== "undefined") {
+        if (localStorage.savecount) {
+            localStorage.savecount = Number(localStorage.savecount)+1;
+        } else {
+            localStorage.savecount = 1;
+        }
+        document.getElementById("saveCount").innerHTML = "You have saved " + tempName + " " + localStorage.savecount + " time(s).";
+    } else {
+        document.getElementById("saveCount").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+	
+}
+
+function help() {
+	var tempName;
+	document.getElementById("voice").innerHTML = "OH NO! Hurry fix it!";
+	document.getElementById("return").innerHTML = "TAP HERE TO SOLIDIFY";
+	if (localStorage.monsterName) {
+		tempName = localStorage.monsterName;
+	} else {
+		tempName = "the monster"
+	}
+	
+	
+	if(typeof(Storage) !== "undefined") {
+        if (localStorage.clickcount) {
+            localStorage.clickcount = Number(localStorage.clickcount)+1;
+        } else {
+            localStorage.clickcount = 1;
+        }
+        document.getElementById("tickleCount").innerHTML = "You have tickled " + localStorage.monsterName + " " + localStorage.clickcount + " time(s).";
+    } else {
+        document.getElementById("tickleCount").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+}
+	
+function monsterName() {
+	if(typeof(Storage) !== "undefined") {
+        if (localStorage.monsterName) {
+            document.getElementById("monsterName").innerHTML = "Your monster's name is " + localStorage.monsterName;
+        } else {
+            document.getElementById("monsterName").innerHTML = "Your monster has no name!";
+        }
+    } else {
+        document.getElementById("tickleCount").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+}
+	
+function setName() {
+localStorage.monsterName = document.getElementById("nameYourMonster").value;
+monsterName();
+
+}
+</script>
+<style>
+#wrapper {
+	text-align: center
+}
+
+#monster {
+	display:inline-block;
+	line-height:100px;
+	animation-fill-mode: forwards;
+	animation-duration: 6s;
+	transition: all 6s;
+}
+
+
+@keyframes disappear {
+	from {opacity: 1;}
+	to {opacity: 0;}
+}
+
+@keyframes reappear {
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
+
+
+</style>
+<script>
+
+</script>
+</head>
+<body>
+<h1> This is my ninth Challenge </h1>
+<h2> Standard JavaScript Events Including those for Mobile Devices ( Ex. onTouchBegin, onLoad, etc.) and Animation and Transition Events</h2>
+<h2>This webpage works better on mobile</h2>
+<h3 id="voice" style="text-align:center">Tickle Me!</h3>
+<div id="wrapper"
+<!--Monster image found at: https://blog.spoongraphics.co.uk/tutorials/create-a-cute-furry-vector-monster-in-illustrator -->
+<div id="monster" onTouchMove="tickle()" onTouchEnd="help()">
+<img id="monsterimg" src="\Monster.jpg" alt="Monster" width="375" height="250">
+</div>
+</div>
+<h2 id="return" onTouchStart="warning()"></h2>
+<p id="monsterName" onload="monsterName()" style="text-align:center"></p>
+<p id="tickleCount" style="text-align:center"></p>
+<p id="saveCount" style="text-align:center"></p>
+<form style="text-align:center">
+  <label for="nameYourMonster">Name your monster:<br></label>
+  <input type="text" id="nameYourMonster" name="nameYourMonster">
+</form>
+<div id="wrapper">
+<button type="button" onclick="setName()">Set Name</button>
+</div>
+
+
+
+</body>
+<html>
