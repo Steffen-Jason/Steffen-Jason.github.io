@@ -48,7 +48,7 @@ function help() {
         } else {
             localStorage.clickcount = 1;
         }
-        document.getElementById("tickleCount").innerHTML = "You have tickled " + localStorage.monsterName + " " + localStorage.clickcount + " time(s).";
+        document.getElementById("tickleCount").innerHTML = "You have tickled " + tempName + " " + localStorage.clickcount + " time(s).";
     } else {
         document.getElementById("tickleCount").innerHTML = "Sorry, your browser does not support web storage...";
     }
