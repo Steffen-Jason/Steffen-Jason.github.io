@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="C:\Users\Jason\Documents\GitHub\Steffen-Jason.github.io\mystyle.css">
+<script>
+
+
+function stepOne() {
+	document.getElementById("textOne").style.display = "none";
+	document.getElementById("textTwo").style.display = "block";
+	
+	document.getElementById("larryOne").style.animationName = "disappearOne";	
+}
+
+function stepTwo() {
+	document.getElementById("textTwo").style.display = "none";
+	document.getElementById("textThree").style.display = "block";
+
+	document.getElementById("larryTwo").style.animationName = "disappearOne";
+}
+
+function stepThree() {
+	document.getElementById("textThree").style.display = "none";
+	document.getElementById("textFour").style.display = "block";
+
+	document.getElementById("larryThree").style.animationName = "disappearOne";
+}
+
+function stepFour() {
+	document.getElementById("textFour").style.display = "none";
+	document.getElementById("textFive").style.display = "block";
+
+	document.getElementById("larryFour").style.animationName = "disappearOne";
+}
+
+function pushOnce() {
+	document.getElementById("buttonOne").style.zIndex = "-20";
+	document.getElementById("buttonTwo").style.zIndex = "10";
+	
+	document.getElementById("textOne").style.display = "none";
+	document.getElementById("textTwo").style.display = "none";
+	document.getElementById("textThree").style.display = "none";
+	document.getElementById("textFour").style.display = "none";
+	document.getElementById("textFive").style.display = "none";
+	document.getElementById("textSix").style.display = "block";
+
+	document.getElementById("larryOne").style.zIndex = "-20";
+	document.getElementById("larryTwo").style.zIndex = "-20";
+	document.getElementById("larryThree").style.zIndex = "-20";
+	document.getElementById("larryFour").style.zIndex = "-20";
+	document.getElementById("larryFive").style.zIndex = "-20";
+}
+
+function pushTwice() {
+	document.getElementById("textSix").style.display = "none";
+	document.getElementById("textSeven").style.display = "block";
+	
+	document.getElementById("larryYellow").style.animationName = "disappearOne";
+}
+
+	
+
+
+</script>
+<style>
+
+body {
+	background-color: white;
+}
+
+span { 
+	display: inline-block;
+	font-weight: bold;
+	color: red;
+	animation-duration: 0.5s;
+	animation-name: shake;
+	animation-iteration-count: infinite;
+}
+
+h2  {
+	color: black;
+	text-align: center;
+	font-family: Comic Sans MS;
+	padding: 0px;
+	font-size: 30px;
+}
+
+#wrapper {
+	text-align: center
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+@keyframes disappearOne {
+	0% {opacity: 1; z-index: 10;}
+	99% {opacity: 0; }
+	100% {z-index: -20; } 
+	
+}
+
+@keyframes appear {
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
+
+.larry {
+	position: fixed;
+	right: 20%;
+	bottom: 0px;
+}
+
+.theButton {
+	position: fixed;
+	left: 20%;
+	bottom: 0px;
+}
+
+#buttonOne {
+	opacity: 1;
+	z-index: -1;
+}
+
+#buttonTwo {
+	opacity: 1;
+	z-index: -2;
+}
+
+#larryOne {
+	opacity: 1;
+	animation-duration: .1s;
+	animation-timing-function: linear;
+	animation-fill-mode: forwards;
+	z-index: -1;
+}
+
+#larryTwo {
+	opacity: 1;
+	animation-duration: .1s;
+	animation-timing-function: linear;
+	animation-fill-mode: forwards;
+	z-index: -2;
+}
+
+#larryThree {
+	opacity: 1;
+	animation-duration: .1s;
+	animation-timing-function: linear;
+	animation-fill-mode: forwards;
+	z-index: -3;
+}
+
+#larryFour {
+	opacity: 1;
+	animation-duration: .1s;
+	animation-timing-function: linear;
+	animation-fill-mode: forwards;
+	z-index: -4;
+}
+	
+#larryFive {
+	opacity: 1;
+	animation-duration: .1s;
+	animation-timing-function: linear;
+	animation-fill-mode: forwards;
+	z-index: -5;
+}
+
+#larryYellow {
+	opacity: 1;
+	animation-duration: .1s;
+	animation-timing-function: linear;
+	animation-fill-mode: forwards;
+	z-index: -6;
+}
+
+#larryDots {
+	opacity: 1;
+	animation-duration: .1s;
+	animation-timing-function: linear;
+	animation-fill-mode: forwards;
+	z-index: -7;
+}
+
+
+
+
+</style>
+<script>
+
+</script>
+</head>
+<body>
+<h3 style="padding:0px; font-size:10px"> This project is based on the book "Don't Push the Button" By James Cotter who both wrote and illustrated it.</h3>
+<h3 style="padding:0px; font-size:10px"> Nearly all text and illustrations are from this book, which was published by Sourcebooks.</h3>
+<h3 style="padding:0px; font-size:10px"> This page is solely intended for a good grade in CS264 and to entertain my children.</h3>
+<br>
+<br>
+<br>
+
+<h2 id="textOne">Hi! My name is Larry.  Welcome to<br>my app. There's only one rule.<br><span id="red">DON'T</span> push the button.</h2>
+<h2 id="textTwo" style="display: none">Seriously. Don't even <span class="red">THINK</span> about it.<h2>
+<h2 id="textThree" style="display: none">It does look pretty nice though.<br>I wonder what would happen<br>if we pushed it...</h2>
+<h2 id="textFour" style="display: none">No! We can't!!<br>We musn't!!</h2>
+<h2 id="textFive" style="display: none">Psst! No one is looking.<br>You should give the<br>button one little push.</h2>
+<h2 id="textSix" style="display: none">Ah! Now I'm yellow. Push it again!</h2>
+<h2 id="textSeven" style="display: none">Eeek! Now I'm yellow <span id="red">AND</span> polka dot!<br>Push it twice!</h2>
+
+<!--Button found at http://www.jemome.com/p-don-t-press-the-button-915384/ -->
+<img id="buttonOne" class="theButton" onclick="pushOnce()" ontouch="pushOnce()" src="C:\Users\Jason\Documents\GitHub\Steffen-Jason.github.io\ButtonOne.jpg" alt="Button" width="300" height="200">
+<img id="buttonTwo" class="theButton" onclick="pushTwice()" ontouch="pushTwice()" src="C:\Users\Jason\Documents\GitHub\Steffen-Jason.github.io\ButtonTwo.jpg" alt="Button" width="300" height="200">
+
+<img id="larryOne" class="larry" onclick="stepOne()" ontouch="stepOne()" src="C:\Users\Jason\Documents\GitHub\Steffen-Jason.github.io\LarryOne.jpg" alt="Monster" width="425" height="350">
+<img id="larryTwo" class="larry" onclick="stepTwo()" ontouch="stepTwo()" src="C:\Users\Jason\Documents\GitHub\Steffen-Jason.github.io\LarryTwo.jpg" alt="Monster" width="425" height="350">
+<img id="larryThree" class="larry" onclick="stepThree()" ontouch="stepThree()" src="C:\Users\Jason\Documents\GitHub\Steffen-Jason.github.io\LarryThree.jpg" alt="Monster" width="425" height="350">
+<img id="larryFour" class="larry"  onclick="stepFour()" ontouch="stepFour()" src="C:\Users\Jason\Documents\GitHub\Steffen-Jason.github.io\LarryFour.jpg" alt="Monster" width="425" height="350">
+<img id="larryFive" class="larry"  src="C:\Users\Jason\Documents\GitHub\Steffen-Jason.github.io\LarryFive.jpg" alt="Monster" width="425" height="350">
+<img id="larryYellow" class="larry"  src="C:\Users\Jason\Documents\GitHub\Steffen-Jason.github.io\LarryYellow.jpg" alt="Monster" width="425" height="350">
+<img id="larryDots" class="larry"  src="C:\Users\Jason\Documents\GitHub\Steffen-Jason.github.io\LarryDots.jpg" alt="Monster" width="425" height="350">
+
+</body>
+<html>
