@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="C:\Users\Jason\Documents\GitHub\Steffen-Jason.github.io\mystyle.css">
+<link rel="stylesheet" type="text/css" href="\mystyle.css">
 <script>
-
+var buttonClick = 0;
+var tummyCount = 0;
 
 function stepOne() {
 	document.getElementById("textOne").style.display = "none";
@@ -33,6 +34,28 @@ function stepFour() {
 	document.getElementById("larryFour").style.animationName = "disappearOne";
 }
 
+function stepFive() {
+	document.getElementById("textEight").style.display = "none";
+	document.getElementById("textNine").style.display = "block";
+	
+	document.getElementById("buttonThree").style.zIndex = "-20";
+	document.getElementById("buttonFour").style.zIndex = "10";
+	
+}
+
+function stepSix() {
+	document.getElementById("textEleven").style.display = "none";
+	document.getElementById("textTwelve").style.display = "block";
+	
+	document.getElementById("larrySlow").style.display = "none";
+	document.getElementById("larryBook").style.display = "block";
+	document.getElementById("larryBook").style.opacity = "1";
+	
+	document.getElementById("buttonFour").style.zIndex = "-20";
+	document.getElementById("buttonFive").style.zIndex = "10";
+}
+	
+
 function pushOnce() {
 	document.getElementById("buttonOne").style.zIndex = "-20";
 	document.getElementById("buttonTwo").style.zIndex = "10";
@@ -44,22 +67,123 @@ function pushOnce() {
 	document.getElementById("textFive").style.display = "none";
 	document.getElementById("textSix").style.display = "block";
 
-	document.getElementById("larryOne").style.zIndex = "-20";
-	document.getElementById("larryTwo").style.zIndex = "-20";
-	document.getElementById("larryThree").style.zIndex = "-20";
-	document.getElementById("larryFour").style.zIndex = "-20";
-	document.getElementById("larryFive").style.zIndex = "-20";
+	document.getElementById("larryOne").style.display = "none";
+	document.getElementById("larryTwo").style.display = "none";
+	document.getElementById("larryThree").style.display = "none";
+	document.getElementById("larryFour").style.display = "none";
+	document.getElementById("larryFive").style.display = "none";
+	document.getElementById("larrySpin").style.display = "none";
+	document.getElementById("larryCrazy").style.display = "none";
 }
 
 function pushTwice() {
 	document.getElementById("textSix").style.display = "none";
 	document.getElementById("textSeven").style.display = "block";
 	
-	document.getElementById("larryYellow").style.animationName = "disappearOne";
+	document.getElementById("larryYellow").style.display = "none";
+	
+	document.getElementById("buttonTwo").style.zIndex = "-20";
+	document.getElementById("buttonThree").style.zIndex = "10";
 }
 
-	
+function pushDouble() {
 
+	buttonClick++;
+	if (buttonClick >= 2) {
+		document.getElementById("textSeven").style.display = "none";
+		document.getElementById("textEight").style.display = "block";
+		document.getElementById("textNine").style.display = "block";
+	
+		document.getElementById("larryDots").style.animationName = "disappearOne";
+		document.getElementById("larryDots").style.opacity = "0";
+	
+		document.getElementById("larrySpin").style.display = "block";
+		document.getElementById("larrySpin").style.opacity = "1";
+		document.getElementById("larrySpin").style.animationName = "spin";
+		
+		document.getElementById("buttonThree").style.zIndex = "-20";
+		document.getElementById("buttonFour").style.zIndex = "10";
+	}	
+	
+}
+
+function pushAllTheThings() {
+	buttonClick++;
+	var maxClick = 19;
+	var speedUp;
+	
+	if (buttonClick <= maxClick) {
+		var speedUp = 2 - (buttonClick * 0.1);
+	} else {
+	buttonClick = 19;
+	}
+	
+	document.getElementById("textEight").style.display = "none";
+	document.getElementById("textNine").style.display = "none";
+	document.getElementById("textEleven").style.display = "none";
+	document.getElementById("textTen").style.display = "block";
+	
+	document.getElementById("larrySpin").style.display = "none";
+	document.getElementById("larrySlow").style.display = "none";
+	
+	document.getElementById("larryCrazy").style.display = "block";
+	document.getElementById("larryCrazy").style.opacity = "1";
+	document.getElementById("larryCrazy").style.animationName = "crazy";
+	document.getElementById("larryCrazy").style.animationDuration = speedUp + "s";
+
+}
+
+function slowLarry() {
+	buttonClick--;
+	var stop = 2;
+	var speedDown;
+	
+	if (buttonClick >= stop) {
+		 speedDown = 2 - (buttonClick * 0.1);
+	
+		document.getElementById("larryCrazy").style.animationDuration = speedDown + "s";
+	} else {
+		document.getElementById("textTen").style.display = "none";
+		document.getElementById("textEleven").style.display = "block";
+	
+		document.getElementById("larryCrazy").style.display = "none";
+		document.getElementById("larrySlow").style.display = "block";
+		document.getElementById("larrySlow").style.opacity = "1";
+		document.getElementById("larrySlow").style.animationName = "slow";
+	}
+}
+
+function countDown() {
+	tummyCount++;
+	if (tummyCount == 1) {
+		document.getElementById("textThirteen").style.display = "block";
+		document.getElementById("textThirteen").style.fontSize = "72px";
+	} else if (tummyCount == 2) {
+		document.getElementById("textThirteen").style.display = "none";
+		document.getElementById("textFourteen").style.display = "block";
+		document.getElementById("textFourteen").style.fontSize = "72px";
+	} else {
+		document.getElementById("textTwelve").innerHTML = "Did it work? Am I fixed?<br>No. Not yet.<br>Maybe try poking my tummy one more time."
+		document.getElementById("textFourteen").style.display = "none";
+		document.getElementById("textFifteen").style.display = "block";
+		document.getElementById("textFifteen").style.fontSize = "72px";
+		
+		
+		document.getElementById("larryBook").style.display = "none";
+		document.getElementById("larryNotyet").style.display = "block";
+		document.getElementById("larryNotyet").style.opacity = "1";
+	}
+}	
+
+function finalLarry() {
+	document.getElementById("textFifteen").style.display = "none";
+	document.getElementById("textTwelve").style.display = "none";
+	document.getElementById("textSeventeen").style.display = "block";
+	
+	document.getElementById("larryNotyet").style.display = "none";
+	document.getElementById("larryFixed").style.display = "block";
+	document.getElementById("larryFixed").style.opacity = "1";
+}
 
 </script>
 <style>
@@ -110,6 +234,27 @@ h2  {
 	
 }
 
+@keyframes spin {
+	0%  {transform: rotate(0deg); }
+	25% {transform: rotate(90deg); }
+	50% {transform: rotate(180deg); }
+	75% {transform: rotate(270deg); }
+	100% {transform: rotate(360deg); }
+}
+
+@keyframes crazy {
+	0%  {transform: rotateZ(0deg) ; }
+	25% {transform: rotateZ(90deg) ; }
+	50% {transform: rotateZ(180deg); }
+	75% {transform: rotateZ(270deg); }
+	100% {transform: rotateZ(360deg); }
+}
+
+@keyframes slow { 
+	0%  {transform: rotateZ(0deg) ; }
+	100% {transform: rotateZ(360deg); }
+}
+
 @keyframes appear {
 	from {opacity: 0;}
 	to {opacity: 1;}
@@ -135,6 +280,21 @@ h2  {
 #buttonTwo {
 	opacity: 1;
 	z-index: -2;
+}
+
+#buttonThree {
+	opacity: 1;
+	z-index: -3;
+}
+
+#buttonFour {
+	opacity: 1;
+	z-index: -4;
+}
+
+#buttonFive {
+	opacity: 1;
+	z-index: -5;
 }
 
 #larryOne {
@@ -178,7 +338,7 @@ h2  {
 }
 
 #larryYellow {
-	opacity: 1;
+	
 	animation-duration: .1s;
 	animation-timing-function: linear;
 	animation-fill-mode: forwards;
@@ -193,8 +353,58 @@ h2  {
 	z-index: -7;
 }
 
+#larrySpin {
+	opacity: 0;
+	animation-duration: 2s;
+	animation-delay: 0.3s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	animation-fill-mode: forwards;
+	z-index: -8;
+}
 
+#larryCrazy {
+	opacity: 0;
+	animation-duration: 2s;
+	animation-delay: 0.3s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	animation-fill-mode: forwards;
+	z-index: -9;
+}
 
+#larrySlow {
+	opacity: 0;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
+	z-index: -10;
+}
+
+#larryBook {
+	opacity: 0;
+	animation-duration: .1s;
+	animation-timing-function: linear;
+	animation-fill-mode: forwards;
+	z-index: -11;
+}
+
+#larryNotyet {
+	opacity: 0;
+	animation-duration: .1s;
+	animation-timing-function: linear;
+	animation-fill-mode: forwards;
+	z-index: -12;
+}
+	
+#larryFixed {
+	opacity: 0;
+	animation-duration: .1s;
+	animation-timing-function: linear;
+	animation-fill-mode: forwards;
+	z-index: -13;
+}
 
 </style>
 <script>
@@ -204,9 +414,9 @@ h2  {
 <body>
 <h3 style="padding:0px; font-size:10px"> This project is based on the book "Don't Push the Button" By James Cotter who both wrote and illustrated it.</h3>
 <h3 style="padding:0px; font-size:10px"> Nearly all text and illustrations are from this book, which was published by Sourcebooks.</h3>
-<h3 style="padding:0px; font-size:10px"> This page is solely intended for a good grade in CS264 and to entertain my children.</h3>
+<h3 style="padding:0px; font-size:10px"> This page is solely intended for a good grade in CS261 and to entertain my children.</h3>
 <br>
-<br>
+<h3>(Psst. Click on Larry to see what he says next!)</h3>
 <br>
 
 <h2 id="textOne">Hi! My name is Larry.  Welcome to<br>my app. There's only one rule.<br><span id="red">DON'T</span> push the button.</h2>
@@ -216,18 +426,37 @@ h2  {
 <h2 id="textFive" style="display: none">Psst! No one is looking.<br>You should give the<br>button one little push.</h2>
 <h2 id="textSix" style="display: none">Ah! Now I'm yellow. Push it again!</h2>
 <h2 id="textSeven" style="display: none">Eeek! Now I'm yellow <span id="red">AND</span> polka dot!<br>Push it twice!</h2>
+<h2 id="textEight" style="display: none"><span id="red">Wheeeee!</span></h2>
+<h2 id="textNine" style="display: none">This is fun!<br>Quick push it a bunch of times!!!</h2>
+<h2 id="textTen" style="display: none">Oh no I'm out of control!<br>Quick! Tickle my tummy<br>to slow me down!</h2>
+<h2 id="textEleven" style="display: none">Hehe! That tickles!</h2>
+<h2 id="textTwelve" style="display: none">Okay, much better. It says here<br>"to fix Larry, poke his tummy three times."</h2>
+<h2 id="textThirteen" style="display: none"><span id="red">1</span></h2>
+<h2 id="textFourteen" style="display: none"><span id="red">2</span></h2>
+<h2 id="textFifteen" style="display: none"><span id="red">3</span></h2>
+<!--<h2 id="textSixteen" style="display: none">Did it work? Am I fixed?<br>No. Not yet.<br>Maybe try poking my tummy one more time.</h2>-->
+<h2 id="textSeventeen" style="display: none">Thank you! I'm all better. Now let's<br><span id="red">never</span> press the button ever again.<br>But that was kinda fun.</h2>
 
 <!--Button found at http://www.jemome.com/p-don-t-press-the-button-915384/ -->
-<img id="buttonOne" class="theButton" onclick="pushOnce()" ontouch="pushOnce()" src="C:\Users\Jason\Documents\GitHub\Steffen-Jason.github.io\ButtonOne.jpg" alt="Button" width="300" height="200">
-<img id="buttonTwo" class="theButton" onclick="pushTwice()" ontouch="pushTwice()" src="C:\Users\Jason\Documents\GitHub\Steffen-Jason.github.io\ButtonTwo.jpg" alt="Button" width="300" height="200">
+<img id="buttonOne" class="theButton" onclick="pushOnce()" ontouch="pushOnce()" src="\ButtonOne.jpg" alt="Button" width="300" height="200">
+<img id="buttonTwo" class="theButton" onclick="pushTwice()" ontouch="pushTwice()" src="\ButtonOne.jpg" alt="Button" width="300" height="200">
+<img id="buttonThree" class="theButton" onclick="pushDouble()" ontouch="pushDouble()" src="\ButtonOne.jpg" alt="Button" width="300" height="200">
+<img id="buttonFour" class="theButton" onclick="pushAllTheThings()" ontouch="pushAllTheThings()" src="\ButtonOne.jpg" alt="Button" width="300" height="200">
+<img id="buttonFive" class="theButton"  src="\ButtonOne.jpg" alt="Button" width="300" height="200">
 
-<img id="larryOne" class="larry" onclick="stepOne()" ontouch="stepOne()" src="C:\Users\Jason\Documents\GitHub\Steffen-Jason.github.io\LarryOne.jpg" alt="Monster" width="425" height="350">
-<img id="larryTwo" class="larry" onclick="stepTwo()" ontouch="stepTwo()" src="C:\Users\Jason\Documents\GitHub\Steffen-Jason.github.io\LarryTwo.jpg" alt="Monster" width="425" height="350">
-<img id="larryThree" class="larry" onclick="stepThree()" ontouch="stepThree()" src="C:\Users\Jason\Documents\GitHub\Steffen-Jason.github.io\LarryThree.jpg" alt="Monster" width="425" height="350">
-<img id="larryFour" class="larry"  onclick="stepFour()" ontouch="stepFour()" src="C:\Users\Jason\Documents\GitHub\Steffen-Jason.github.io\LarryFour.jpg" alt="Monster" width="425" height="350">
-<img id="larryFive" class="larry"  src="C:\Users\Jason\Documents\GitHub\Steffen-Jason.github.io\LarryFive.jpg" alt="Monster" width="425" height="350">
-<img id="larryYellow" class="larry"  src="C:\Users\Jason\Documents\GitHub\Steffen-Jason.github.io\LarryYellow.jpg" alt="Monster" width="425" height="350">
-<img id="larryDots" class="larry"  src="C:\Users\Jason\Documents\GitHub\Steffen-Jason.github.io\LarryDots.jpg" alt="Monster" width="425" height="350">
+<img id="larryOne" class="larry" onclick="stepOne()" ontouch="stepOne()" src="\LarryOne.jpg" alt="Monster" width="425" height="350">
+<img id="larryTwo" class="larry" onclick="stepTwo()" ontouch="stepTwo()" src="\LarryTwo.jpg" alt="Monster" width="425" height="350">
+<img id="larryThree" class="larry" onclick="stepThree()" ontouch="stepThree()" src="\LarryThree.jpg" alt="Monster" width="425" height="350">
+<img id="larryFour" class="larry"  onclick="stepFour()" ontouch="stepFour()" src="\LarryFour.jpg" alt="Monster" width="425" height="350">
+<img id="larryFive" class="larry"  src="\LarryFive.jpg" alt="Monster" width="425" height="350">
+<img id="larryYellow" class="larry"  src="\LarryYellow.jpg" alt="Monster" width="425" height="350">
+<img id="larryDots" class="larry"  src="\LarryDots.jpg" alt="Monster" width="425" height="350">
+<img id="larrySpin" class="larry"  onclick="stepFive()" ontouch="stepFive()" src="\LarrySpin.jpg" alt="Monster" width="300" height="400">
+<img id="larryCrazy" class="larry"  onclick="slowLarry()" ontouch="slowLarry()" src="\LarryCrazy.jpg" alt="Monster" width="300" height="400">
+<img id="larrySlow" class="larry"  onmouseout="stepSix()" ontouchmove="stepSix()" src="\LarrySpin.jpg" alt="Monster" width="300" height="400">
+<img id="larryBook" class="larry"  onclick="countDown()" ontouch="countDown()" src="\LarryBook.jpg" alt="Monster" width="425" height="350">
+<img id="larryNotyet" class="larry" onclick="finalLarry()" ontouch="finalLarry()" src="\LarryDots.jpg" alt="Monster" width="425" height="350">
+<img id="larryFixed" class="larry"  src="\LarryFixed.jpg" alt="Monster" width="425" height="350">
 
 </body>
 <html>
